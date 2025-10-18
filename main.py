@@ -19,9 +19,10 @@ while not forca.fim_de_jogo:
         if escolha in [1, 2]:
             if escolha == 1:
                 forca.chute(input("Digite uma letra: "))
+                forca.status_palavra()
+
             else:
                 forca.advinha_palavra(input("Tente advinhar a palavra: "))
-
         else:
             print("ATENÇÃO: Escolha 1 ou 2!")
 

@@ -30,6 +30,13 @@ def chute(letra: str):
     else:
         advinha_palavra(str(input("Seus chutes acabaram! Tente advinhar a palavra completa: ")))
 
+def status_palavra():
+    status = " ".join(
+        [letra if letra in letras_chutadas else "_" for letra in palavra_secreta]
+    )
+
+    print(status)
+
 def advinha_palavra(palavra: str):
     global fim_de_jogo
     palavra = palavra.upper().strip()
