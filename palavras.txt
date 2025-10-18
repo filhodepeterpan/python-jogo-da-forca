@@ -15,7 +15,7 @@ caranguejo
 carro
 castelo
 chuva
-coração
+coraçao
 corda
 coruja
 criatura
@@ -36,11 +36,11 @@ floresta
 folha
 formiga
 futuro
-galáxia
+galaxia
 gato
 girassol
 grito
-história
+historia
 ilha
 inverno
 janela
@@ -48,7 +48,7 @@ jardim
 labirinto
 lagarto
 lanterna
-leão
+leao
 livro
 lua
 luz
@@ -58,9 +58,9 @@ mar
 martelo
 medo
 melodia
-memória
+memoria
 mentira
-mistério
+misterio
 morcego
 mundo
 musgo
@@ -72,7 +72,7 @@ oceano
 olhar
 onda
 orvalho
-pássaro
+passaro
 pedra
 pensamento
 perigo
@@ -81,7 +81,7 @@ poesia
 ponte
 porta
 raio
-relâmpago
+relampago
 rio
 rocha
 sabedoria
@@ -94,8 +94,8 @@ tesouro
 tigre
 trem
 vento
-verão
+verao
 verdade
 viagem
-vulcão
+vulcao
 zebra

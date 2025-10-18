@@ -1,7 +1,9 @@
 from random import choice
+from pathlib import Path
 
-with open("palavras.txt", "r", encoding="utf-8") as arquivo:
-    palavras = [linha.strip().upper() for linha in  arquivo]
+caminho = Path(__file__).parent / "palavras.txt"
+with open(caminho, "r", encoding="utf-8") as arquivo:
+    palavras = [linha.strip().upper() for linha in arquivo]
 
 palavra_secreta: str = choice(palavras)
 erros: int = 5
