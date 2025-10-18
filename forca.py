@@ -22,6 +22,7 @@ def chute(letra: str):
 
         if letra in palavra_secreta:
             print(f"✅ A letra '{letra}' está na palavra!")
+
         else:
             print(f"❌ A letra '{letra}' não está na palavra!")
             erros-=1
@@ -31,11 +32,17 @@ def chute(letra: str):
         advinha_palavra(str(input("Seus chutes acabaram! Tente advinhar a palavra completa: ")))
 
 def status_palavra():
+    global fim_de_jogo
     status = " ".join(
-        [letra if letra in letras_chutadas else "_" for letra in palavra_secreta]
+        [letra if letra in letras_chutadas
+         else "_"
+         for letra in palavra_secreta]
     )
-
     print(status)
+
+    if all(letra in letras_chutadas for letra in palavra_secreta):
+        print(f"🎉 Você completou a palavra!")
+        fim_de_jogo = True
 
 def advinha_palavra(palavra: str):
     global fim_de_jogo
