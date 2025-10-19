@@ -32,7 +32,7 @@ def chute(letra: str):
 
         letras_chutadas.append(letra)
     else:
-        advinha_palavra(str(input("\nSeus chutes acabaram! Tente advinhar a palavra completa: ")))
+        adivinha_palavra(str(input("\nSeus chutes acabaram! Tente adivinhar a palavra completa: ")))
 
 def status_palavra():
     global fim_de_jogo
@@ -47,9 +47,9 @@ def status_palavra():
         print(f"\n🎉 Você completou a palavra!")
         fim_de_jogo = True
 
-def advinha_palavra(palavra: str):
+def adivinha_palavra(palavra: str):
     global fim_de_jogo
-    palavra = palavra.upper().strip()
+    palavra = palavra.upper()
 
     if palavra_secreta == palavra:
         print(f"\n✅ Você acertou! A palavra é {palavra}!")
