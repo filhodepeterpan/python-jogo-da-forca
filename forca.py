@@ -1,5 +1,6 @@
 from random import choice
 from pathlib import Path
+import cor
 
 caminho = Path(__file__).parent / "palavras.txt"
 with open(caminho, "r", encoding="utf-8") as arquivo:
@@ -23,15 +24,15 @@ def chute(letra: str):
             return
 
         if letra in palavra_secreta:
-            print(f"✅ A letra '{letra}' está na palavra!")
+            print(f"\n✅ A letra {cor.verde}{letra}{cor.padrao} está na palavra!")
 
         else:
-            print(f"❌ A letra '{letra}' não está na palavra!")
+            print(f"\n❌ A letra {cor.vermelho}{letra}{cor.padrao} não está na palavra!")
             erros-=1
 
         letras_chutadas.append(letra)
     else:
-        advinha_palavra(str(input("Seus chutes acabaram! Tente advinhar a palavra completa: ")))
+        advinha_palavra(str(input("\nSeus chutes acabaram! Tente advinhar a palavra completa: ")))
 
 def status_palavra():
     global fim_de_jogo
@@ -40,10 +41,10 @@ def status_palavra():
          else "_"
          for letra in palavra_secreta]
     )
-    print(status)
+    print(f"\n{cor.negativo}  {status}  {cor.padrao}\n")
 
     if all(letra in letras_chutadas for letra in palavra_secreta):
-        print(f"🎉 Você completou a palavra!")
+        print(f"\n🎉 Você completou a palavra!")
         fim_de_jogo = True
 
 def advinha_palavra(palavra: str):
@@ -51,9 +52,9 @@ def advinha_palavra(palavra: str):
     palavra = palavra.upper().strip()
 
     if palavra_secreta == palavra:
-        print(f"✅ Você acertou! A palavra é {palavra}!")
+        print(f"\n✅ Você acertou! A palavra é {palavra}!")
 
     else:
-        print(f"❌ Você errou... A palavra era {palavra_secreta}!")
+        print(f"\n❌ Você errou... A palavra era {palavra_secreta}!")
 
     fim_de_jogo = True

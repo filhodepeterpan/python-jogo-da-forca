@@ -1,0 +1,6 @@
+padrao: str = "\033[0m"
+vermelho: str = "\033[31m"
+verde: str = "\033[32m"
+azul: str = "\033[34m"
+rosa: str = "\033[95m"
+negativo: str = "\033[7m"
