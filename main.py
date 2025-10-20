@@ -4,41 +4,27 @@ import cor
 # print(f"Palavra sorteada (teste): {forca.palavra_secreta}")
 
 print(f"Bem-vindos ao {cor.verde}Jogo da Forca{cor.padrao}. Você terá {forca.erros} erros disponíveis para chutar as letras da palavra.\n"
-      f"Após os {forca.erros} erros, você terá que adivinhar a palavra ou perderá o jogo. IMPORTANTE: Desconsidere acentos.\n")
+      f"Após os {forca.erros} erros, você terá que adivinhar a palavra ou perderá o jogo. {cor.azul}IMPORTANTE: Desconsidere acentos.{cor.padrao}\n")
 
 while not forca.fim_de_jogo:
 
     palavra_erros_disponiveis : str = "erros disponíveis" if forca.erros > 1 else "erro disponível"
 
-    print(f"{cor.rosa}1 - Chutar uma letra. Você tem {forca.erros} {palavra_erros_disponiveis}")
-    print(f"{cor.azul}2 - Adivinhar a palavra")
+    print(f"{cor.rosa}Você tem {forca.erros} {palavra_erros_disponiveis}")
     print(f"{cor.padrao}\n")
 
     try:
-        escolha = int(input("Você  quer chutar uma letra ou adivinhar a palavra?: "))
+        letra = str(input("Digite uma letra ou tente adivinhar uma palavra: "))
 
-        if escolha in [1, 2]:
-            if escolha == 1:
-                letra = str(input("Digite uma letra: "))
+        if letra.isalpha():
+            forca.chute(letra)
 
-                if len(letra) == 1 and letra.isalpha():
-                    forca.chute(letra)
-                else:
-                    print(f"\n{cor.vermelho}Você {'só pode' if len(letra) > 1 else 'precisa'} digitar uma letra.{cor.padrao}")
-
+            if len(letra) == 1:
                 forca.status_palavra()
-
-            else:
-                tentativa_palavra = str(input("Tente adivinhar a palavra: ")).strip()
-
-                if tentativa_palavra.isalpha():
-                    forca.adivinha_palavra(tentativa_palavra)
-                else:
-                    print(f"{cor.vermelho}A palavra contém apenas letras.\n")
         else:
-            print(f"{cor.vermelho}ATENÇÃO: Escolha 1 ou 2!\n")
-
+            print(f"{cor.vermelho}ATENÇÃO: Digite apenas letras.\n")
+            
     except ValueError:
-        print(f"{cor.vermelho}ATENÇÃO: Digite apenas números.\n")
+        print(f"{cor.vermelho}ATENÇÃO: Digite apenas letras.\n")
 
 input(f"\n{cor.verde}Pressione Enter para sair...")

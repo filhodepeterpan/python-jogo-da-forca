@@ -19,18 +19,22 @@ def chute(letra: str):
 
         letra = letra.upper().strip()
 
-        if letra in letras_chutadas:
-            print(f"Você já chutou a letra {letra}!")
-            return
+        if len(letra) == 1:
 
-        if letra in palavra_secreta:
-            print(f"\n✅ A letra {cor.verde}{letra}{cor.padrao} está na palavra!")
+            if letra in letras_chutadas:
+                print(f"Você já chutou a letra {letra}!")
+                return
 
+            if letra in palavra_secreta:
+                print(f"\n✅ A letra {cor.verde}{letra}{cor.padrao} está na palavra!")
+
+            else:
+                print(f"\n❌ A letra {cor.vermelho}{letra}{cor.padrao} não está na palavra!")
+                erros-=1
+
+            letras_chutadas.append(letra)
         else:
-            print(f"\n❌ A letra {cor.vermelho}{letra}{cor.padrao} não está na palavra!")
-            erros-=1
-
-        letras_chutadas.append(letra)
+            adivinha_palavra(letra)
     else:
         adivinha_palavra(str(input("\nSeus chutes acabaram! Tente adivinhar a palavra completa: ")))
 
